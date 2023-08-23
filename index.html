@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box1 {
+        background-image: linear-gradient(
+          to right,
+          rgba(55, 91, 105, 0.418),
+          rgba(255, 192, 203, 0.445),
+          rgba(172, 101, 101, 0.452),
+          rgba(88, 48, 48, 0.452),
+          rgba(71, 56, 56, 0.459),
+          rgba(65, 92, 102, 0.356),
+          rgba(135, 121, 124, 0.445)
+        );
+        grid-template-columns: 50% 50%;
+        height: 1200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      img {
+        width: 300px;
+        height: 200px;
+      }
+      .b {
+      }
+
+      .t {
+        border: blueviolet solid 1px;
+        width: 300px;
+      }
+      .a {
+        border: blueviolet solid 1px;
+        height: 400px;
+        width: 400px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="box1"></div>
+
+    <script>
+      const e = document.getElementById("box1");
+
+      function bildfeld(bild) {
+        return `<div class = "b">
+                  <img src=${bild} ></div>`;
+      }
+      function textfeld(text) {
+        return `<div class = "t">
+                  ${text}</div>`;
+      }
+      function bildtexterstelen(bild, text) {
+        e.innerHTML += `<div class = "a">${bildfeld(bild)}${textfeld(
+          text
+        )}</div>`;
+      }
+      kompnent = [
+        {
+          bild:
+            "https://www.urlaubstracker.de/wp-content/uploads/2019/03/aegypten-kamel-strand-768x512.jpg",
+          text:
+            "Auf unserer Liste der beliebtesten Urlaubsziele darf Ägypten natürlich nicht fehlen. In Hurghada oder Sharm el Sheikh gibt es tolle Hotelresorts mit All Inclusive. Die umwerfende Unterwasserwelt könnt Ihr beim Tauchen und Schnorcheln entdecken."
+        },
+        {
+          bild:
+            "https://www.urlaubstracker.de/wp-content/uploads/2018/03/tuerkei-oludeniz-bucht-schiff-768x512.jpg ",
+          text:
+            "Eines der beliebtesten Urlaubsziele der Deutschen ist die Türkei. Besondere Aufmerksamkeit genießt die Türkische Riviera sowie Städte wie Bodrum oder Side, die Euch tolle Hotelresorts direkt am Strand, vor der Küste zum Mittelmeer, bieten."
+        },
+        {
+          bild:
+            "https://www.urlaubstracker.de/wp-content/uploads/2019/05/kroatien-dalmatien-biokovo-mountain-768x512.jpg",
+          text:
+            "Kroatien wird immer beliebter unter den Reisenden. Dabei sind nicht nur die Küstenregionen interessant, sondern auch Städte wie Dubrovnik oder einzigartige Naturerscheinung wie die Plitvicer Seen. Perfekt für einen Bade- oder Backpacking-Urlaub!."
+        },
+        {
+          bild:
+            "https://www.urlaubstracker.de/wp-content/uploads/2019/03/spanien-mallorca-strand-calo-des-moro-768x510.jpg",
+          text:
+            "Mallorca wird nicht umsonst als „17. Bundesland“ bezeichnet. Das beliebteste Urlaubsziel der Deutschen protzt mit der Region am Ballermann für Partyurlaub, aber auch mit schönen Stränden, die man bei einer Rundreise entdecken kann."
+        },
+        {
+          bild:
+            "https://www.urlaubstracker.de/wp-content/uploads/2018/01/griechenland-zakynthos-navagio-768x591.jpg",
+          text:
+            "Das Urlaubsziel Griechenland bietet Strand, Meer und spannende Sehenswürdigkeiten. Neben dem Festland mit der Hauptstadt Athen, sind vor allem griechische Inseln wie Kreta, Kos, Korfu oder Santorini beliebt."
+        },
+        {
+          bild:
+            "https://www.urlaubstracker.de/wp-content/uploads/2019/02/thailand-koh-rok-oben-boote-768x512.jpg",
+          text:
+            "Echte Beachvibes, traumhafte Naturlandschaften und Strände sowie eine herzliche Gastfreundschaft erwarten Euch in Thailand. Besonders beliebte Urlaubsziele in Thailand sind Bangkok, Phuket, Koh Phangan, Koh Samui, Chiang Mai und viele weitere."
+        }
+      ];
+      for (let a = 0; a < kompnent.length; a++)
+        bildtexterstelen(kompnent[a].bild, kompnent[a].text);
+    </script>
+  </body>
+</html>
